@@ -43,9 +43,9 @@ const forecast = (latitude, longitude, callback) => {
 
         } else {
 
-            const { temperature, precipProbability} = response.body.currently
+            const { temperature, precipProbability, humidity, windSpeed} = response.body.currently
 
-            const result = ` ${response.body.daily.data[0].summary} It is currently ${temperature} degrees out. There is a ${precipProbability}% chance of rain.`
+            const result = ` ${response.body.daily.data[0].summary} It is currently ${temperature} degrees outside. There is a ${precipProbability}% chance of rain. The humidity and wind speed are ${humidity} and ${windSpeed} respectively.`
 
 
             callback(undefined, result);
